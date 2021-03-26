@@ -84,12 +84,17 @@
 </template>
 
 <script>
+import {login} from '../api/api'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted: function() {
+    console.log("调用了mounted");
+    login();
   }
 }
 </script>
