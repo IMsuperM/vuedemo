@@ -4,5 +4,5 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  VUE_APP_API_URL = '"https://verym.top/api"'
+  VUE_APP_API_URL:'"https://verym.top/api"'
 })
