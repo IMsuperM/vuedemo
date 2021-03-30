@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import {login} from '../api/api'
+import {login,test} from '../api/api'
 export default {
   name: 'HelloWorld',
   data () {
@@ -95,6 +95,7 @@ export default {
   mounted: function() {
     console.log("调用了mounted");
     login();
+    // test();
   }
 }
 </script>
