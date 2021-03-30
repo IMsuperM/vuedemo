@@ -10,20 +10,21 @@ module.exports = {
     assetsSubDirectory: "static",
     assetsPublicPath: "/",
     proxyTable: {
-      "/apis": {
+      "/api": {
         //将www.example.com印射为/apis
-        target: process.env.VUE_APP_API_URL, // 接口域名
+        target: 'http://127.0.0.1:3000',// 接口域名
         secure: false, // 如果是https接口，需要配置这个参数
         changeOrigin: true, //是否跨域
-        pathRewrite: {
-          "^/apis": "" //需要rewrite的,
+        changeOrigin: true,//是否跨域
+        pathRewrite: { //重写路径
+          '^/api': ''
         }
       }
     },
 
     // Various Dev Server settings
-    host: "localhost", // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: "127.0.0.1", // can be overwritten by process.env.HOST
+    port: 8099, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -46,12 +47,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, "../dist/index.html"),
+    index: path.resolve(__dirname, "../vuedemo/index.html"),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, "../dist"),
+    assetsRoot: path.resolve(__dirname, "../vuedemo"),
     assetsSubDirectory: "static",
-    assetsPublicPath: "/",
+    assetsPublicPath: "/vuedemo/",
 
     /**
      * Source Maps
