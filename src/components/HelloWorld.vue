@@ -85,6 +85,7 @@
 
 <script>
 import {login,test} from '../api/api'
+import { mapActions } from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
@@ -96,7 +97,12 @@ export default {
     console.log("调用了mounted");
     login();
     // test();
-  }
+    this.getOrderQueryList()
+  },
+  methods: {
+    ...mapActions(['getOrderQueryList',]),
+    
+ }
 }
 </script>
 

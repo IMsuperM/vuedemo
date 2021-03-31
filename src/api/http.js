@@ -23,7 +23,7 @@ axios.interceptors.response.use((response)=> {
   const { authorization } = response.headers;
   console.log("axios.interceptors.response.use ~ authorization", authorization);
   //如果token存在则存在localStorage
-  authorization && localStorage.setItem('tokenName', authorization);
+  authorization && localStorage.setItem('token', authorization);
   return response;
 },
 (error)=> {
@@ -31,6 +31,10 @@ axios.interceptors.response.use((response)=> {
     const { status } = error.response;
     //如果401或405则到登录页
     if (status == 401 || status == 405) {
+      //清除token
+      localStorage.removeItem('token');
+      //提示窗口，确认后跳转登录页
+
       Router.push({path:'/login'})
     }
   }
