@@ -1,0 +1,7 @@
+$themeColor: rgba(54, 61, 68, 1);
+$selectColor: rgb(122, 222, 238);
+
+@mixin line($height:20px){
+    height: $height ;
+    // line-height: $height;
+  }
