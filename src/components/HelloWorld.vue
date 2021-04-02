@@ -94,7 +94,6 @@ export default {
     }
   },
   mounted: function() {
-    console.log("调用了mounted");
     login();
     // test();
     this.getOrderQueryList()
@@ -107,7 +106,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+div{
+  background-color: $themeColor;
+}
 h1, h2 {
   font-weight: normal;
 }
