@@ -7,12 +7,12 @@ export default new Router({
   // mode: 'history',
   routes: [
     {
-      path: "/",
+      path: "/hello",
       name: "HelloWorld",
       component: () => import("@/components/HelloWorld")
     },
     {
-      path: "/login",
+      path: "/",
       name: "Login",
       component: () => import("@/components/Login")//路由懒加载形式
     }
