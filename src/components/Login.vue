@@ -1,8 +1,20 @@
 <!-- 登录 -->
 <template>
-  <div class="login">
-    <div class="row"></div>
-    <div class="row"></div>
+  <div class="page">
+    <form class="login" action="" method="post">
+      <div class="row">
+        <label for="name">username</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="row">
+        <!-- <label for="password">password</label> -->
+        <input type="password" name="password" id="password" />
+      </div>
+      <div class="row">
+        <input type="button" value="提交" />
+        <input type="button" value="取消" />
+      </div>
+    </form>
   </div>
 </template>
 
@@ -38,20 +50,42 @@ export default {
 </script>
 <style lang='scss' scoped>
 /* @import url(); //引入公共css类 */
+.page {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  width: 100%;
+  height: 100%;
+  // background-color: yellow;
+}
 .login {
   display: flex;
   flex-direction: column; //纵向排列
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  width: 100%;
-  height: 100%;
-  background-color: yellow;
-  
+  width: 50%;
+  height: 50%;
+  background-color: blue;
+
   .row {
-    width: 10%;
-    height: 10%;
-    margin-top: 10px;
+    flex: 1;
+    width: 90%;
     background-color: red;
+    display: flex;
+    flex-direction: row; //横向排列
+    flex-wrap:wrap;
+    justify-content:left;
+    // align-items: center; /* 垂直居中 */
+    & label {
+      width: 20%;
+      height: 20%;
+    }
+    & input {
+      width: 50%;
+      height: 50%;
+    }
   }
+}
+.button {
 }
 </style>
